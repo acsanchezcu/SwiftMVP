@@ -7,14 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-protocol DogsView: class {
+protocol DogsView: ViewProtocol {
 	func refreshData()
-    func showLoading()
-    func dismissLoading()
-    func displayAlert(withTitle title: String, message: String)
     func reloadIndexPaths(_ indexPaths: [IndexPath])
     func indexPathsVisible() -> [IndexPath]?
+    func push(viewController: UIViewController, animated: Bool)
 }
 
 protocol DogsCellProtocol {

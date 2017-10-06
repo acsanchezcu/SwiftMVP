@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DogsViewController: UIViewController {
+class DogsViewController: BaseViewController {
     
     // MARK: - Outlets
     
@@ -22,8 +22,6 @@ class DogsViewController: UIViewController {
     }
     
     // MARK: - Properties
-    
-    var loadingView: LoadingView?
     
     lazy var presenter: DogsPresenter = {
         let service = DogsService()
@@ -81,31 +79,9 @@ extension DogsViewController: DogsView {
     func indexPathsVisible() -> [IndexPath]? {
         return tableView.indexPathsForVisibleRows
     }
-
-    func showLoading() {
-        guard let view = navigationController?.view else { return }
-        
-        loadingView = LoadingView()
-        
-        view.addSubview(loadingView!)
-        
-        loadingView?.translatesAutoresizingMaskIntoConstraints = false
-        loadingView?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        loadingView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        loadingView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        loadingView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
     
-    func dismissLoading() {
-        loadingView?.removeFromSuperview()
-        loadingView = nil
-    }
-    
-    func displayAlert(withTitle title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
+    func push(viewController: UIViewController, animated: Bool) {
+        navigationController?.pushViewController(viewController, animated: animated)
     }
     
 }

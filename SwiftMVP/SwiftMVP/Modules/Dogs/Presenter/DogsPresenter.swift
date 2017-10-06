@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DogsPresenter {
     
@@ -85,6 +86,11 @@ extension DogsPresenter: DogsPresenterProtocol {
     }
     
     func select(indexPath: IndexPath) {
-        //pick dog and get list of images
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        
+        if let viewController = storyboard.instantiateInitialViewController() as? DetailViewController {
+            viewController.dogViewModel = viewModels[indexPath.row]
+            view?.push(viewController: viewController, animated: true)
+        }
     }
 }

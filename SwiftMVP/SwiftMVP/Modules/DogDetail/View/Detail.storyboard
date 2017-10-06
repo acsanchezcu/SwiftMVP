@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5bm-bN-J9o">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="HPP-6h-E3i">
+            <objects>
+                <viewController id="5bm-bN-J9o" customClass="DetailViewController" customModule="SwiftMVP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z31-cT-Jj9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FbE-vA-Wy0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="c1D-09-InO">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailCollectionViewCell" id="Pcc-6E-6fV" customClass="DetailCollectionViewCell" customModule="SwiftMVP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-sb-nQB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="f3v-sb-nQB" firstAttribute="leading" secondItem="Pcc-6E-6fV" secondAttribute="leading" id="Aej-ec-G8y"/>
+                                            <constraint firstItem="f3v-sb-nQB" firstAttribute="top" secondItem="Pcc-6E-6fV" secondAttribute="top" id="g6a-KZ-Cce"/>
+                                            <constraint firstAttribute="bottom" secondItem="f3v-sb-nQB" secondAttribute="bottom" id="jEh-iq-1tS"/>
+                                            <constraint firstAttribute="trailing" secondItem="f3v-sb-nQB" secondAttribute="trailing" id="nvg-QL-4Lx"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="breedImageView" destination="f3v-sb-nQB" id="IWq-YP-T2b"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FbE-vA-Wy0" firstAttribute="top" secondItem="TRe-oX-0HF" secondAttribute="top" id="Ned-JB-B2e"/>
+                            <constraint firstItem="FbE-vA-Wy0" firstAttribute="leading" secondItem="Z31-cT-Jj9" secondAttribute="leading" id="UQa-CV-3Py"/>
+                            <constraint firstItem="TRe-oX-0HF" firstAttribute="bottom" secondItem="FbE-vA-Wy0" secondAttribute="bottom" id="ffP-iP-S2C"/>
+                            <constraint firstItem="TRe-oX-0HF" firstAttribute="trailing" secondItem="FbE-vA-Wy0" secondAttribute="trailing" id="frU-nV-jHO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TRe-oX-0HF"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="FbE-vA-Wy0" id="LHS-ex-x1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2f-tB-r59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480.80000000000001" y="-213.64317841079463"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dog" width="512" height="512"/>
+    </resources>
+</document>
